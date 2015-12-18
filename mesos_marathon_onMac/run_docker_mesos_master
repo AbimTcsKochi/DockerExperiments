@@ -1,0 +1,11 @@
+docker run --name "mesos_master_0.24" --net="host" -d  \
+-p 5050:5050 \
+-e "MESOS_CLUSTER=localmesos" \
+-e "MESOS_HOSTNAME=${HOST_IP}" \
+-e "MESOS_IP=${HOST_IP}" \
+-e "MESOS_PORT=5050" \
+-e "MESOS_LOG_DIR=/var/log/mesos/master" \
+-e "MESOS_QUORUM=1" \
+-e "MESOS_ZK=zk://127.0.0.1:2181/mesos" \
+-e "MESOS_WORK_DIR=/var/lib/mesos/master" \
+mesosphere/mesos-master:0.24.0-1.0.27.ubuntu1404
